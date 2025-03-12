@@ -6,6 +6,8 @@ public class Player : MonoBehaviour
 {
     [SerializeField]
     private int _points;
+
+    private bool _hasMessageBeenSent;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +25,16 @@ public class Player : MonoBehaviour
             //add 10 points
             _points = _points + 10;
         }
+
+        //if point value is greater than or equal to 50
+        // print you are awsome
+
+        if (_points >= 50 && _hasMessageBeenSent == false)
+        {
+            Debug.Log("You are awesome!!");
+            _hasMessageBeenSent = true;
+        }
+        
         
     }
 }
